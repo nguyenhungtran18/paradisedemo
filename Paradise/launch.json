@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "noi-tieng-anh",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-Command", "$l=[System.Net.HttpListener]::new();$l.Prefixes.Add('http://localhost:5174/');$l.Start();Write-Host 'Server started';while($l.IsListening){$c=$l.GetContext();$p=$c.Request.Url.LocalPath;if($p -eq '/' -or $p -eq ''){$p='/index.html'};$f='C:\\Users\\Nguyen Hung\\OneDrive\\Máy tính\\New folder\\App luyen noi Eng\\app-runner'+$p;if(Test-Path $f){$b=[System.IO.File]::ReadAllBytes($f);$ext=[System.IO.Path]::GetExtension($f);$ct=if($ext -eq '.html'){'text/html'}elseif($ext -eq '.js'){'application/javascript'}elseif($ext -eq '.css'){'text/css'}else{'application/octet-stream'};$c.Response.ContentType=$ct;$c.Response.ContentLength64=$b.Length;$c.Response.OutputStream.Write($b,0,$b.Length)}else{$c.Response.StatusCode=404};$c.Response.Close()}"],
+      "port": 5174
+    },
+    {
+      "name": "paradise-spa",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-Command", "$l=[System.Net.HttpListener]::new();$l.Prefixes.Add('http://localhost:3456/');$l.Start();Write-Host 'Server started';while($l.IsListening){$c=$l.GetContext();$p=$c.Request.Url.LocalPath;if($p -eq '/' -or $p -eq ''){$p='/index.html'};$f='C:\\Users\\Nguyen Hung\\OneDrive\\Máy tính\\Paradise'+$p;if(Test-Path $f){$b=[System.IO.File]::ReadAllBytes($f);$c.Response.ContentLength64=$b.Length;$c.Response.OutputStream.Write($b,0,$b.Length)}else{$c.Response.StatusCode=404};$c.Response.Close()}"],
+      "port": 3456
+    }
+  ]
+}

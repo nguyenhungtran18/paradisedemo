@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(python -c \"import sys; print\\(sys.version\\)\")",
+      "Bash(pip list *)",
+      "Bash(mkdir -p \"C:/Users/Nguyen Hung/OneDrive/Máy tính/Paradise/.claude\")",
+      "mcp__Claude_Preview__preview_start",
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(ls \"/c/Users/Nguyen Hung/AppData/Roaming/Claude/claude-code/2.1.181/\" | head -20)",
+      "Bash(# Check if there's a node bundled with Claude *)",
+      "Bash(mkdir -p \"C:\\\\Users\\\\Nguyen Hung\\\\OneDrive\\\\Máy tính\\\\App luyen noi Eng\\\\app-runner\\\\.claude\")",
+      "mcp__visualize__show_widget"
+    ]
+  }
+}
